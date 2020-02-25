@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+ {% block content%}
+ {% block navbar%}
+{% endblock%}
+<form method="POST" action="{% url 'update' update.id %}" enctype="multipart/form-data">
+{% csrf_token %}
+{% csrf_token %}
+Title:
+<br/>
+<input type ="text" name="title" />
+<br/>
+Image:
+<br/>
+<input type ="file" name="image" />
+<br/>
+Summary:
+<br/>
+<input type="text" name ="summary" />
+<br/>
+Time:
+<br/>
+<input type ="date" name="time" />
+<br/>
+<input type="submit" name="submit" />
+</form>
+{% endblock%}

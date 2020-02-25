@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block navbar%}
+{% endblock%}
+{% block content%}
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Portfolio</h1>
+      <p class="lead text-muted">Welcome</p>
+      <img src ={% static 'messi.jpg' %} height='280' width='50%'></img>
+     
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+          {% for jobs in job.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src= {{jobs.image.url}} ></img>
+            <div class="card-body">
+              <p class="card-text">{{jobs.summary}}</p>
+            </div>     
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+  </div>
+
+</main>
+{% endblock %}

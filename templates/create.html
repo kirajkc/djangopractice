@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block navbar%}
+{% endblock%}
+ {% block content%}
+{% if error %}
+{{error}}
+{% endif %}
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+{% csrf_token %}
+Title:
+<br/>
+<input type ="text" name="title" />
+<br/>
+Image:
+<br/>
+<input type ="file" name="image" />
+<br/>
+Summary:
+<br/>
+<input type="text" name ="summary" />
+<br/>
+Time:
+<br/>
+<input type ="date" name="time" />
+<br/>
+<input type="submit" name="submit" />
+</form>
+{% endblock%}
